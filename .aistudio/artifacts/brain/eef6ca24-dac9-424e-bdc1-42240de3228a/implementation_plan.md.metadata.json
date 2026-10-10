@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan for relocating the 'Show on home', 'KYC & Authenticity Audit (Lightbulb)', and 'Delete User' action buttons from the Admin Users Table into the User Details Enforcement tab.",
+  "updatedAt":  "2026-10-08T12:29:47.714396033Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

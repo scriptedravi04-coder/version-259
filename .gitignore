@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+
+# One-off repair scripts belong in scripts/ (or nowhere) — 18 of them had piled up in the root.
+/fix_*.cjs
+/fix_*.js
+/update_server.*
+/get_schema.*
+/test-axios.js
+# Local runtime artefacts
+db_mock.json.corrupted-*.bak
+scripts/brand/startup-links.html

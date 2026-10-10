@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#F2F2F7" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Session 43: "default" — iPhone paints the bar with the page colour (StatusBarSync), dark clock. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Ybex" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Session 43: iPhone / iPad launch images (plain purple = first frame of the launch animation) -->
+    <link rel="apple-touch-startup-image" href="/splash/launch-1320x2868.png" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1206x2622.png" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1080x2340.png" media="(device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1640x2360.png" media="(device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1620x2160.png" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash/launch-1488x2266.png" media="(device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <script>
+      // First script in head to catch and suppress any cross-origin script or iframe errors
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        if (msg === 'Script error.' || (typeof msg === 'string' && (msg.includes('ResizeObserver') || msg.includes('Script error')))) {
+          return true;
+        }
+      };
+      window.addEventListener('error', function(event) {
+        if (event.message === 'Script error.' || event.message?.includes('ResizeObserver') || event.message?.includes('Script error')) {
+          event.preventDefault();
+          event.stopImmediatePropagation?.();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason?.message?.includes?.('ResizeObserver') || event.reason?.message?.includes?.('Script error')) {
+          event.preventDefault();
+        }
+      });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Ybex | India's Most Transparent Influencer Marketplace</title>
+    <meta name="description" content="Influencer and brand collaboration marketplace for sponsorship campaigns, UGC content orders, contract management, escrow, and chat." />
+    <meta property="og:title" content="Ybex | India's Most Transparent Influencer Marketplace" />
+    <meta property="og:description" content="Influencer and brand collaboration marketplace for sponsorship campaigns, UGC content orders, contract management, escrow, and chat." />
+    <!-- Session 43 (Ravi): link previews (WhatsApp, Telegram, Gmail, Android share sheet) show the
+         Ybex picture instead of a grey globe. Absolute URL — preview bots need the full address. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ybex" />
+    <meta property="og:url" content="https://version80.ai.studio/" />
+    <meta property="og:image" content="https://version80.ai.studio/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://version80.ai.studio/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ybex — Where brands meet creators" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ybex | India's Most Transparent Influencer Marketplace" />
+    <meta name="twitter:description" content="Verified creators, secure payment hold and legal contracts — all in one place." />
+    <meta name="twitter:image" content="https://version80.ai.studio/og-image.jpg" />
+
+    <!-- Google tag (gtag.js) with fallback error handling -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQXC5TWFS0" onerror="this.onerror=null;"></script>
+    <script>
+      try {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YQXC5TWFS0');
+      } catch (e) {}
+    </script>
+    <!-- Session 43: installed-app launch (Claude Design "Ybex App Icon & Splash", 4b + launch animation).
+         Plain HTML/CSS so it plays while the app files are still downloading. Only in the installed
+         app (home-screen / TWA), once per app session. The exit (shrink into the home banner) is run by
+         src/components/layout/AppLaunchSplash.jsx through window.__ybSplash. -->
+    <style>
+      /* Session 43 (Ravi): installed-app first paint is the splash purple, so there is no blank
+         flash before the launch animation (iOS) and no colour jump (Android web splash). Plain web
+         pages stay on the light background. */
+      @media (display-mode: standalone), (display-mode: fullscreen) { html { background: #7E00DC; } }
+      #yb-splash{position:fixed;inset:0;z-index:2147483000;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+      #yb-splash .p{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;background:linear-gradient(180deg,#9B00FF 0%,#7E00DC 30%,#6200B4 60%,#2E0066 100%)}
+      #yb-splash .w{position:absolute;left:50%;top:50%;width:min(58vw,360px);aspect-ratio:1370/400;transform:translate(-50%,-50%)}
+      #yb-splash .l{position:absolute;inset:0;opacity:.8;clip-path:inset(-20% 100% -20% 0);-webkit-clip-path:inset(-20% 100% -20% 0);animation:ybRev 1170ms 620ms both}
+      #yb-splash svg{display:block;width:100%;height:100%;overflow:visible}
+      #yb-splash .s{position:absolute;inset:0}
+      #yb-splash .sh{transform:translateX(-600px);animation:ybShine 650ms 1140ms cubic-bezier(.4,0,.2,1) both}
+      #yb-splash .d{position:absolute;left:50%;top:50%;width:7.3%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(255,255,255,.5);transform:translate(-50%,-50%) scale(0);animation:ybDot 1140ms both}
+      #yb-splash .g{position:absolute;inset:0;animation:ybFade 650ms 1140ms cubic-bezier(.4,0,.2,1) both}
+      #yb-splash .m{position:absolute;aspect-ratio:1;border-radius:50%;filter:blur(5px);opacity:0;transform:translate(-50%,-50%) scale(.4);animation:ybSmoke 1420ms both ease-out}
+      #yb-splash .t{position:absolute;left:0;right:0;bottom:calc(8.5% + env(safe-area-inset-bottom,0px));text-align:center;font:600 15px/1.2 'DM Sans',system-ui,-apple-system,sans-serif;color:#F1EAFF;opacity:0;animation:ybIn 650ms 1140ms cubic-bezier(.4,0,.2,1) both}
+      #yb-splash.x .w{transition:transform 180ms cubic-bezier(.5,0,.75,0)}
+      #yb-splash.x .t{transition:opacity 180ms cubic-bezier(.5,0,.75,0);opacity:0!important;animation:none}
+      @keyframes ybDot{
+        0%{left:50%;top:50%;transform:translate(-50%,-50%) scale(0) rotate(0);animation-timing-function:cubic-bezier(.34,1.56,.64,1)}
+        31.6%{left:50%;top:50%;transform:translate(-50%,-50%) scale(1.7) rotate(0);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+        54.4%{left:2%;top:82%;transform:translate(-50%,-50%) scale(1) rotate(-360deg);animation-timing-function:cubic-bezier(.45,0,.25,1)}
+        100%{left:94.1%;top:82%;transform:translate(-50%,-50%) scale(1) rotate(1080deg)}}
+      @keyframes ybRev{
+        0%{clip-path:inset(-20% 100% -20% 0);-webkit-clip-path:inset(-20% 100% -20% 0);opacity:.8;animation-timing-function:cubic-bezier(.45,0,.25,1)}
+        44.4%{clip-path:inset(-20% 6% -20% 0);-webkit-clip-path:inset(-20% 6% -20% 0);opacity:.8;animation-timing-function:cubic-bezier(.4,0,.2,1)}
+        100%{clip-path:inset(-20% 0 -20% 0);-webkit-clip-path:inset(-20% 0 -20% 0);opacity:1}}
+      @keyframes ybShine{to{transform:translateX(1900px)}}
+      @keyframes ybFade{to{opacity:0}}
+      @keyframes ybIn{to{opacity:1}}
+      @keyframes ybSmoke{
+        0%{opacity:0;transform:translate(-50%,-50%) translateY(0) scale(.4)}
+        16%{opacity:1;transform:translate(-50%,-50%) translateY(-12%) scale(1.1)}
+        37%{opacity:1;transform:translate(-50%,-50%) translateY(-25%) scale(1.5)}
+        100%{opacity:0;transform:translate(-50%,-50%) translateY(-60%) scale(2.6)}}
+      @media (prefers-reduced-motion:reduce){
+        #yb-splash .l{animation:none;clip-path:none;-webkit-clip-path:none;opacity:1}
+        #yb-splash .d{animation:none;left:94.1%;top:82%;transform:translate(-50%,-50%)}
+        #yb-splash .g,#yb-splash .m,#yb-splash .sh{display:none}
+        #yb-splash .t{animation:none;opacity:1}}
+    </style>
+      <!-- Session 43 (from Ravi's AI Studio fix): in AI Studio's preview the dev server's hot-reload
+         socket ("vite-hmr") can't connect and threw "WebSocket closed without opened". Only that
+         one socket is answered with a quiet stand-in; every other socket (Socket.IO chat, live
+         refresh) uses the real WebSocket. A production build never opens a vite-hmr socket. -->
+    <script>
+      (function () {
+        var Native = window.WebSocket;
+        if (!Native || Native.__ybWrapped) return;
+        function isHmr(p) { return p === "vite-hmr" || (Array.isArray(p) && p.indexOf("vite-hmr") !== -1); }
+        function Quiet() {
+          var self = this;
+          this.readyState = 1; this.protocol = "vite-hmr"; this.url = "";
+          this.onopen = null; this.onmessage = null; this.onclose = null; this.onerror = null;
+          this.send = function () {}; this.close = function () { self.readyState = 3; };
+          this.addEventListener = function (type, fn) {
+            if (type === "open" && typeof fn === "function") setTimeout(function () { try { fn({ type: "open" }); } catch (e) {} }, 0);
+          };
+          this.removeEventListener = function () {};
+          setTimeout(function () { if (typeof self.onopen === "function") { try { self.onopen({ type: "open" }); } catch (e) {} } }, 0);
+        }
+        function Wrapped(url, protocols) {
+          if (isHmr(protocols)) return new Quiet();
+          return protocols === undefined ? new Native(url) : new Native(url, protocols);
+        }
+        Wrapped.prototype = Native.prototype;
+        Wrapped.CONNECTING = 0; Wrapped.OPEN = 1; Wrapped.CLOSING = 2; Wrapped.CLOSED = 3;
+        Wrapped.__ybWrapped = true;
+        window.WebSocket = Wrapped;
+        window.addEventListener("unhandledrejection", function (e) {
+          var m = e && e.reason && (e.reason.message || String(e.reason));
+          if (m && /WebSocket closed without opened/i.test(m)) e.preventDefault();
+        });
+      })();
+    </script>
+</head>
+  <body>
+    <div id="yb-splash" role="status" aria-label="Opening Ybex" hidden>
+      <div class="p">
+        <div class="w">
+          <div class="l"><svg viewBox="600 260 1370 400" aria-hidden="true"><g fill="#fff"><polygon points="626,305 706,305 792,449 878,305 953,305 827,515 827,630 752,630 752,514"/><rect x="979" y="286" width="73" height="344"/><path fill-rule="evenodd" d="M1150 377a101 128 0 1 1 0 256a101 128 0 1 1 0-256zM1115 436a63 69 0 1 0 0 138a63 69 0 1 0 0-138z"/><g transform="translate(1419 504) rotate(-45) scale(.67)"><path d="M155 0A155 155 0 1 0 127 89M-155 0L155 0" fill="none" stroke="#fff" stroke-width="92"/></g><polygon points="1558,380 1639,380 1692,452 1746,380 1823,380 1730,503 1827,630 1744,630 1690,554 1633,630 1554,630 1650,504"/></g></svg></div>
+          <svg class="s" viewBox="600 260 1370 400" aria-hidden="true"><defs><mask id="ybM" maskUnits="userSpaceOnUse" x="600" y="260" width="1370" height="400"><g fill="#fff"><polygon points="626,305 706,305 792,449 878,305 953,305 827,515 827,630 752,630 752,514"/><rect x="979" y="286" width="73" height="344"/><path fill-rule="evenodd" d="M1150 377a101 128 0 1 1 0 256a101 128 0 1 1 0-256zM1115 436a63 69 0 1 0 0 138a63 69 0 1 0 0-138z"/><g transform="translate(1419 504) rotate(-45) scale(.67)"><path d="M155 0A155 155 0 1 0 127 89M-155 0L155 0" fill="none" stroke="#fff" stroke-width="92"/></g><polygon points="1558,380 1639,380 1692,452 1746,380 1823,380 1730,503 1827,630 1744,630 1690,554 1633,630 1554,630 1650,504"/></g></mask><linearGradient id="ybG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><g mask="url(#ybM)"><g transform="skewX(-20)"><rect class="sh" x="700" y="200" width="240" height="520" fill="url(#ybG)"/></g></g></svg>
+          <i class="m" style="left:4%;top:86%;width:12%;background:rgba(255,255,255,.55);animation-delay:620ms"></i>
+          <i class="m" style="left:24%;top:84%;width:15%;background:rgba(255,255,255,.5);animation-delay:730ms"></i>
+          <i class="m" style="left:46%;top:86%;width:13%;background:rgba(255,255,255,.45);animation-delay:850ms"></i>
+          <i class="m" style="left:68%;top:84%;width:14%;background:rgba(255,255,255,.4);animation-delay:970ms"></i>
+          <div class="d"><svg class="g" viewBox="0 0 100 100" aria-hidden="true"><g fill="#6200B4"><rect x="45" y="4" width="10" height="20" rx="5"/><rect x="45" y="76" width="10" height="20" rx="5"/><rect x="4" y="45" width="20" height="10" rx="5"/><rect x="76" y="45" width="20" height="10" rx="5"/><circle cx="50" cy="50" r="9"/></g></svg></div>
+        </div>
+        <div class="t">Where brands meet creators</div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var el = document.getElementById("yb-splash");
+        var installed = false, seen = false;
+        try {
+          installed = window.navigator.standalone === true ||
+            (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+          seen = sessionStorage.getItem("yb_splash_seen") === "1";
+        } catch (e) {}
+        if (!el || !installed || seen || window.innerWidth >= 768) { if (el) el.remove(); return; }
+        try { sessionStorage.setItem("yb_splash_seen", "1"); } catch (e) {}
+        el.hidden = false;
+        var root = document.documentElement, meta = document.querySelector('meta[name="theme-color"]');
+        root.style.backgroundColor = "#9B00FF"; if (meta) meta.setAttribute("content", "#9B00FF");
+        var t0 = Date.now(), reduce = false, gone = false;
+        try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+        var INTRO = reduce ? 300 : 2140;
+        function remove() {
+          if (gone) return; gone = true; el.remove();
+          try { window.dispatchEvent(new Event("ybex:splash-done")); } catch (e) {}
+        }
+        function exit(target) {
+          if (gone || el.classList.contains("x")) return;
+          var wait = Math.max(0, INTRO - (Date.now() - t0));
+          setTimeout(function () {
+            var p = el.querySelector(".p"), w = el.querySelector(".w");
+            el.classList.add("x");
+            w.style.transform = "translate(-50%,-50%) scale(.92)";           // Dip, 180 ms
+            setTimeout(function () {
+              var r = target && target.getBoundingClientRect && target.getBoundingClientRect();
+              var ok = r && r.width > 40 && r.height > 20 && r.top >= 0 && r.bottom <= window.innerHeight;
+              if (!ok || reduce) {                                            // no banner: plain fade
+                el.style.transition = "opacity 280ms cubic-bezier(.22,1,.36,1)"; el.style.opacity = "0";
+                el.style.pointerEvents = "none"; setTimeout(remove, 300); return;
+              }
+              var ease = "380ms cubic-bezier(.65,0,.35,1)";                    // Shrink to banner
+              var rad = window.getComputedStyle(target).borderRadius || "20px";
+              p.style.transition = "top " + ease + ",left " + ease + ",width " + ease + ",height " + ease + ",border-radius " + ease;
+              p.style.top = r.top + "px"; p.style.left = r.left + "px";
+              p.style.width = r.width + "px"; p.style.height = r.height + "px"; p.style.borderRadius = rad;
+              var k = (r.width * 0.37) / w.getBoundingClientRect().width * 0.92;
+              w.style.transition = "transform " + ease;
+              w.style.transform = "translate(-50%,-50%) scale(" + k.toFixed(3) + ")";
+              setTimeout(function () {                                        // Hand off to the real banner
+                el.style.pointerEvents = "none";
+                el.style.transition = "opacity 320ms cubic-bezier(.22,1,.36,1)"; el.style.opacity = "0";
+                setTimeout(remove, 340);
+              }, 400);
+            }, 190);
+          }, wait);
+        }
+        window.__ybSplash = { exit: exit, readyAt: t0 + INTRO };
+        setTimeout(function () { exit(null); }, 9000);                       // never get stuck
+        setTimeout(remove, 10500);
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>
